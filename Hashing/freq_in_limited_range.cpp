@@ -12,6 +12,10 @@ Constraints:
 1 ≤ P ≤ 4*104 
 1 <= A[i] <= P
 */
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<unordered_map>
 
 void freq_in_lim_range(vector<int>& arr, int N, int P){
     unordered_map<int, int> mpp;

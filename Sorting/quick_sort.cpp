@@ -1,11 +1,6 @@
-void quickSort(int arr[], int low, int high){
-    if(low >= high) return;
-    int pivot  = partiton(arr, low, high);
-    quickSort(arr, low, pivot-1);
-    quickSort(arr, high, pivot+1);
-}
-
-int partition(arr, low, high){
+#include<iostream>
+using namespace std;
+int partition(int arr[], int low, int high){
     int pivot = arr[low];
     int i = low, j = high;
     while(i<j){
@@ -20,3 +15,11 @@ int partition(arr, low, high){
     swap(arr[j], arr[low]);
     return j;
 }
+
+void quickSort(int arr[], int low, int high){
+    if(low >= high) return;
+    int pivot  = partition(arr, low, high);
+    quickSort(arr, low, pivot-1);
+    quickSort(arr, high, pivot+1);
+}
+

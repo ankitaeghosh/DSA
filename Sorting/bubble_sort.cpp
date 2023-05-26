@@ -1,3 +1,5 @@
+#include<iostream>
+using namespace std;
 void bubble(int arr[], int n){
     if(int i = n-1; i>=1; i--){
         int didSwap = 0;

@@ -13,11 +13,17 @@ Constraints:
 1 <= N <= 105
 1<=A[i]<=105
 */
-
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<map>
+#include<unordered_map>
+#include<set>
+#include<unordered_set>
 vector<int> topK(vector<int>& nums, int k){
     unordered_map<int, int> mpp;
     for(int i=0; i<nums.size(); i++){
-        mpp[numa[i]]++;
+        mpp[nums[i]]++;
     }
 
     vector<pair<int, int>> ans;
@@ -28,11 +34,11 @@ vector<int> topK(vector<int>& nums, int k){
     }
 
     //sorting in descending order
-    sort(ans.begin(), and.end(), greater<pair<int, int>>());
+    sort(ans.begin(), ans.end(), greater<pair<int, int>>());
 
     //sorting in descending order if frequency is same
     for(int i=0; i<ans.size(); i++){
-        if(ans[i].first == ans[i+1].first && ans[i].second < ans[i+1].second && ans[i]!= ans.size()-1){
+        if(ans[i].first == ans[i+1].first && ans[i].second < ans[i+1].second && (ans[i]!= ans.size()-1)){
             swap(ans[i], ans[i+1]);
         }
     }

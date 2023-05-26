@@ -1,3 +1,6 @@
+#include<iostream>
+#include<vector>
+using namespace std;
 void merge(int arr[], int l, int m, int r){
     vector<int> temp;
     int i = l, j = m+1;
@@ -18,7 +21,7 @@ void merge(int arr[], int l, int m, int r){
 
 void mergeSort(int arr[], int l, int r){
     if(l >= r) return;
-    m = l+ ((r-l)/2);
+    int m = l+ ((r-l)/2);
     mergeSort(arr, l, m);
     mergeSort(arr, m+1, r);
     merge(arr, l, m, r);
